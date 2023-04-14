@@ -1,0 +1,29 @@
+muda de pagina atraves do link
+<Link to="/about">About</Link>
+
+Criar componente do contexto
+import { createContext } from "react";
+
+const UsuarioContext = createContext();
+
+export default UsuarioContext;
+
+Criar provider do componente de contexto
+
+
+
+import UsuarioContext from "./UsuarioContext";
+import {Usuarios} from "./data";
+import { useState } from "react";
+
+export default function UsuarioProvider({children}){
+    const [logado, setLogado] = useState();
+    return(
+        <UsuarioContext.Provider value={{Usuarios, logado, setLogado}}>
+            {children}
+        </UsuarioContext.Provider>
+    );
+}
+
+pra usar as variaveis do contexto
+const {logado, setLogado, Usuarios} = useContext(UsuarioContext);

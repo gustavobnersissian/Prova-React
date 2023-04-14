@@ -1,0 +1,58 @@
+na pasta
+1° - npx create-react-app prova
+no index.html <html lang="pt-BR">
+remover 
+remover logo, header em app.js
+
+# Rotas
+Index.js
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+
+App.js
+function App() {
+  return (
+    <Routes>
+      <Route path='/'>
+        <Route index element={<Home/>}/>
+        <Route path='about' element={<About/>}/>
+      </Route>
+      <Route path='/pokemon'>
+        <Route index element={<ListPokemons/>}/>
+        <Route path=':pokemonId' element={<Pokemons/>}/>
+      </Route>
+    </Routes>
+  );
+}
+
+## Componentes
+Criar Home.js
+
+export default function Home(){
+    return(
+        <h1>Home</h1>
+    );
+}
+
+dar import no App.js
+
+Ver página na web
+Terminal npm start
+import Home from './Home.js' no App.js
+
+
+
+Tópicos
+Componentes  ok
+Props ok
+State (User state) ok
+Use effect ok
+Use context ok
+Roots ok
+Variável url ok
+
+Rotas
+npm install react-router-dom
